@@ -1,9 +1,7 @@
 import NextAuth from "next-auth"
 import { authConfig } from "./auth.config"
 
-// Create the handler but only export GET and POST
-const handler = NextAuth(authConfig)
+const { handlers } = NextAuth(authConfig)
 
-// Only export GET and POST - nothing else!
-export const GET = handler
-export const POST = handler 
+export const GET = handlers.GET
+export const POST = handlers.POST 
