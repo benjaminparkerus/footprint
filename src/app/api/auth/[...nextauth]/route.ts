@@ -1,24 +1,11 @@
 import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
-import GithubProvider from "next-auth/providers/github"
+import { authConfig } from "./auth.config"
 
-const handler = NextAuth({
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID!,
-      clientSecret: process.env.GOOGLE_SECRET!,
-    }),
-    GithubProvider({
-      clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_SECRET!,
-    }),
-  ],
-  pages: {
-    signIn: '/auth/signin',
-  },
-})
+const handler = NextAuth(authConfig)
 
-export { handler as GET, handler as POST }
+export const GET = handler
+export const POST = handler
+export { auth as middleware } from "./auth.config"
 
 // Add proper type declarations for Next.js API route
-export type AuthRouteHandlerType = typeof handler 
+export type AuthRouteHandlerType = typeof auth 
