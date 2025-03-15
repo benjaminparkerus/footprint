@@ -27,7 +27,7 @@ export default function SignIn() {
             Sign in to your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Start your journaling journey today
+            Start your journaling journey this day
           </p>
         </div>
         <div className="mt-8 space-y-4">
