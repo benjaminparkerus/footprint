@@ -7,10 +7,18 @@ export default function SignIn() {
     signIn('google', { callbackUrl: '/' })
   }
 
-  const handleGithubSignIn = () => {
-    signIn('github', { callbackUrl: '/' })
+  const handleGithubSignIn = async () => {
+    try {
+      const result = await signIn('github', {
+        callbackUrl: '/',
+        redirect: true,
+      })
+      console.log('GitHub sign-in result:', result)
+    } catch (error) {
+      console.error('GitHub sign-in error:', error)
+    }
   }
-
+//a note
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
