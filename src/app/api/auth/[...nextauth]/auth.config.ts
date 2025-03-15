@@ -1,3 +1,4 @@
+import type { NextAuthConfig } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
 
@@ -15,4 +16,4 @@ export const authConfig = {
   pages: {
     signIn: '/auth/signin',
   },
-} 
+} satisfies NextAuthConfig 
