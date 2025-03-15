@@ -18,4 +18,7 @@ const handler = NextAuth({
   },
 })
 
-export { handler as GET, handler as POST } 
+export { handler as GET, handler as POST }
+
+// Add proper type declarations for Next.js API route
+export type AuthRouteHandlerType = typeof handler 
