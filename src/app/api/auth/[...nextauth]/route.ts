@@ -3,9 +3,5 @@ import { authConfig } from "./auth.config"
 
 const handler = NextAuth(authConfig)
 
-export const GET = handler
-export const POST = handler
-export { auth as middleware } from "./auth.config"
-
-// Add proper type declarations for Next.js API route
-export type AuthRouteHandlerType = typeof auth 
+// Export the handler directly as GET and POST
+export { handler as GET, handler as POST } 
